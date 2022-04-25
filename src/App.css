@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
@@ -44,4 +44,109 @@ body, html {
     font-weight: 100;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+}
+
+.bundesliga-logo {
+    width: 30%;
+    height: 30%;
+    margin-top: 90px;
+}
+
+/*NavBar*/
+.navbar {
+    padding: 12px;
+    background: white;
+    box-shadow: 1px 0px 15px #404c48;
+}
+
+.navLink {
+    padding: 20px;
+    color: #404c48;
+}
+
+.navLink:hover {
+    color: #404c4881;
+}
+
+/*Loader*/
+
+.loader {
+    border: 16px solid #f4c3c8; /* Light grey */
+    border-top: 16px solid #d4040c; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    top: 260px;
+    position: relative;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Search Bar*/
+
+.searchBar {
+    padding: 12px
+}
+
+/*Results*/
+
+h3, p {
+    display: inline;
+}
+
+.fixtures {
+    width: 50%;
+    height: 100px;
+    margin: 2px;
+    padding: auto;
+    display: inline-block;
+    border: 1px #404c48 solid;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.fixtures:hover {
+    box-shadow: 1px 1px 5px #404c48;
+    height: fit-content;;
+}
+
+.team-icon {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 64px;
+    height: 64px;
+}
+
+.time-and-date {
+    text-align: center;   
+    margin: 0px;
+    padding: 0px;
+}   
+
+.closed {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+/*League Table*/
+
+table, th, td {
+    border: 1px solid;
+    margin: auto;
+}
+
+table tr:nth-child(odd) td{
+    background-color: rgba(211, 211, 211, 0.185);
+}
+.table-collapsed {
+    display: none;
 }
