@@ -1,36 +1,79 @@
 import React, { useState, useEffect } from 'react';
 
-function LeagueTable() {
+function LeagueTable({ seasons, divisions }) {
     const [allData,setAllData] = useState([]);
     const [filteredData,setFilteredData] = useState(allData);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [isActive, setActive] = useState("false");
-    const season = "2021"
-    const division = ["bl1", "bl2"]
+    const seasonsMostRecentFirst = [...seasons].reverse();
+    const [division, setDivision] = useState(divisions[0]);
+    const [season, setSeason] = useState(seasonsMostRecentFirst[0]);
+    const [selectedSeason, setSelectedSeason] = useState()
+    const [selectedDivision, setSelectedDivision] = useState()
+
+    console.log(division)
+    console.log(season)
+
+    const handleDivisionChange = (e) => {
+      setDivision(divisions[e.target.value])
+    }
+  
+    const handleSeasonChange = (e) => {
+      setSeason(seasonsMostRecentFirst[e.target.value])
+    }
     
-    useEffect(() => {
-        fetch(`https://www.openligadb.de/api/getbltable/${division[0]}/${season}`)
+    const fetchData = () => {
+        fetch(`https://www.openligadb.de/api/getbltable/${division.value}/${season.value}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
                 setAllData(data);
                 setFilteredData(data);
                 setIsLoaded(true);
+                setSelectedSeason(season.label);
+                setSelectedDivision(division.label);
             })
             .catch(err => console.error(err));
-    }, [])
+    }
 
-    const handleToggle = () => {
-        setActive(!isActive);
-    };
+    useEffect(() => {
+      fetchData();
+    }, [])
 
     if (!isLoaded) return <div className='loader'></div>;
 
     return (
         <div>
-        <h1 onClick={handleToggle}>BUNDESLIGA 1</h1>
-        <table className={isActive ? "table-expanded" : "table-collapsed"}>
-        <tr>
+              <div className="filter-table-container">
+      <form>
+        <label>Division: </label>
+        <select
+          defaultValue={division}
+          onChange={handleDivisionChange}>
+          {divisions.map((value, i) => (
+            <option value={i} key={i}>
+              {value.label}
+            </option>
+          ))}
+        </select>
+
+        <label> Season: </label>
+        <select 
+          defaultValue={season}
+          onChange={handleSeasonChange}>
+          {seasonsMostRecentFirst.map((value, i) => (
+            <option value={i} key={i}>
+              {value.label}
+            </option>
+          ))}
+        </select>
+      </form>
+      <button onClick={fetchData}>Go</button>
+      </div>
+        <h1>{selectedDivision}: {selectedSeason}</h1>
+        <table>
+          <thead>
+            <tr>
+
             <th></th>
             <th>CLUB</th>
             <th>PLAYED</th>
@@ -41,9 +84,11 @@ function LeagueTable() {
             <th>GA</th>
             <th>GD</th>
             <th>POINTS</th>
-        </tr>
-    {filteredData.map((tableInfo) => (
-        <tr>
+            </tr>
+        </thead>
+        <tbody>
+    {filteredData.map((tableInfo, i) => (
+        <tr key={i}>
             <td><img className='team-icon' src={tableInfo.TeamIconUrl} alt="Club logo"></img></td>
             <td>{tableInfo.TeamName}</td>
             <td>{tableInfo.Matches}</td>
@@ -55,7 +100,9 @@ function LeagueTable() {
             <td>{tableInfo.GoalDiff}</td>
             <td>{tableInfo.Points}</td>
         </tr>
-    ))}  
+        
+    ))} 
+        </tbody> 
         </table>
         </div>
     )

@@ -1,79 +1,89 @@
 import React, { useState, useEffect } from 'react';
+import ReactPaginate from 'react-paginate';
 
 function ResultsList({ division, season }) {
-    const [allData, setAllData] = useState([]);
-    const [filteredData, setFilteredData] = useState(allData);
-    const [isLoaded, setIsLoaded] = useState(false);
+  const [allData, setAllData] = useState([]);
+  const [filteredData, setFilteredData] = useState(allData);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [selectedSeason, setSelectedSeason] = useState()
+  const [selectedDivision, setSelectedDivision] = useState()
 
-    const fetchData = () => {
-        fetch(`https://www.openligadb.de/api/getmatchdata/${division}/${season}`)
-        .then(response => response.json())
-        .then(data => {
-            setAllData(data);
-            setFilteredData(data);
-            setIsLoaded(true);
-        })
-        .catch(err => console.error(err));
-    }
+  const [currentPage, setCurrentPage] = useState(0);
 
-    useEffect(() => {
-      fetchData();
-    }, [])
+  console.log(division)
 
-    console.log(allData);
+  const fetchData = () => {
+    fetch(`https://www.openligadb.de/api/getmatchdata/${division.value}/${season.value}`)
+      .then(response => response.json())
+      .then(data => {
+        setAllData(data);
+        setFilteredData(data);
+        setIsLoaded(true);
+        setSelectedSeason(season.label);
+        setSelectedDivision(division.label);
+      })
+      .catch(err => console.error(err));
+  }
 
-    const handleSearch = (event) => {
-        let value = event.target.value.toLowerCase();
-        console.log(value);
-        let result = allData.filter((data) => {
-            const homeTeam = data.Team1.TeamName.toLowerCase();
-            const awayTeam = data.Team2.TeamName.toLowerCase();
-            //const scorer = data.Goals.map((goals) => goals.GoalGetterName).toLowerCase();
-        return homeTeam.search(value) !== -1 || awayTeam.search(value) !== -1; //|| scorer.search(value) != -1;
-        });
-        setFilteredData(result);
-    }
+  useEffect(() => {
+    fetchData();
+  }, [])
+
+  const resultsPerPage = 9;
+  const offset = currentPage * resultsPerPage;
+  const currentPageData = filteredData.slice(offset, offset + resultsPerPage)
+    .map(( matchInfo, i ) =>  (
+      <div className='fixtures' key={i}>
+        <div className='matchDetails'>
+          <div className='time-and-date'>
+            {matchInfo.MatchDateTime.slice(0, 10)} {matchInfo.MatchDateTime.slice(11, 19)}<br></br>
+          </div>
+          <span className='score'>
+            <img className='team-icon' src={matchInfo.Team1.TeamIconUrl} alt='club-icon'></img>
+            <h3>{matchInfo.Team1.TeamName}</h3>
+            <p> {matchInfo.MatchResults.map((result) => result.PointsTeam1)[0]} : {matchInfo.MatchResults.map((result) => result.PointsTeam2)[0]} </p>
+            <h3>{matchInfo.Team2.TeamName}</h3>
+            <img className='team-icon' src={matchInfo.Team2.TeamIconUrl} alt='club-icon'></img>
+          </span>
+        </div>
+
+        <ul className='expanded-content'>
+          {matchInfo.Goals.length > 0 ? "Scorers: " : ""}<br/>
+            {matchInfo.Goals.map((g) => 
+              <li key={g.GoalID}>{g.GoalGetterName}, {g.MatchMinute}<br/></li>
+            )}
+        </ul>            
+      </div>));
+          
+  const pageCount = Math.ceil(allData.length / resultsPerPage);
+
+  function handlePageClick({ selected: selectedPage }) {
+    setCurrentPage(selectedPage);
+  }
+
+  console.log(allData);
  
-    if (!isLoaded) return <div className='loader'/>;
+  if (!isLoaded) return <div className='loader'/>;
 
-    return (
-      <div className="App">
-        {console.log(division)}{console.log(season)}
-        <button onClick={fetchData}>Go</button>
+  return (
+    <div className="App">
+      <button onClick={fetchData}>Go</button>
 
-        <div className='searchBar'>
-          <input placeholder='Search By Club' type="text" onChange={(event) => handleSearch(event)} />
-          <button>Go</button>
-        </div>
-        <div>
-          {filteredData.map((matchInfo, i) => (
-                <div className='fixtures'>
-                    <div className='matchDetails'>
-                        <div className='time-and-date'>
-                            {matchInfo.MatchDateTime.slice(0, 10)} {matchInfo.MatchDateTime.slice(11, 19)}<br></br>
-                        </div>
-                        <span className='score'>
-                            <img className='team-icon' src={matchInfo.Team1.TeamIconUrl} alt='club-icon'></img>
-                            <h3>{matchInfo.Team1.TeamName}</h3>
-                            <p> {matchInfo.MatchResults.map((result) => result.PointsTeam1)[0]} : {matchInfo.MatchResults.map((result) => result.PointsTeam2)[0]} </p>
-                            <h3>{matchInfo.Team2.TeamName}</h3>
-                            <img className='team-icon' src={matchInfo.Team2.TeamIconUrl} alt='club-icon'></img>
-                        </span>
-                    </div>
-
-                    <ul className='expanded-content' key={i}>
-                    Scorers:<br/>
-                    {matchInfo.Goals.map((g) => 
-                      <li key={g.GoalID}>{g.GoalGetterName}, {g.MatchMinute}<br/></li>
-                    )}
-                    </ul>
-                    
-                </div>
-                
-            ))}  
-        </div>
+      <div className="test">
+        <h1>{selectedDivision}: {selectedSeason}</h1>
+        {currentPageData}
+        <ReactPaginate
+          previousLabel={"← Previous"}
+          nextLabel={"Next →"}
+          pageCount={pageCount}
+          onPageChange={handlePageClick}
+          className={"paginate"}
+          pageClassName={"paginate-page-class-name"}
+          activeClassName={"activeClassName"}
+        />
+      </div>
     </div>
-    )
+  )
 }
 
 export default ResultsList;

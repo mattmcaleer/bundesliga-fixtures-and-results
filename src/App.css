@@ -42,6 +42,7 @@
 body, html {
     font-family: 'Kanit', sans-serif;
     font-weight: 100;
+    font-size: larger;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
@@ -87,13 +88,11 @@ body, html {
     100% { transform: rotate(360deg); }
 }
 
-/*Search Bar*/
-
-.searchBar {
-    padding: 12px
-}
-
 /*Results*/
+
+.results-container {
+  margin-top: 20px;
+}
 
 h3, p {
     display: inline;
@@ -140,8 +139,11 @@ li {
 /*League Table*/
 
 table, th, td {
-    border: 1px solid;
     margin: auto;
+}
+
+table {
+  border: 2px solid black;
 }
 
 table tr:nth-child(odd) td{
@@ -149,4 +151,22 @@ table tr:nth-child(odd) td{
 }
 .table-collapsed {
     display: none;
+}
+
+.filter-table-container {
+  margin-top: 20px;
+}
+
+.paginate {
+  cursor: default;
+  width: 100%;
+}
+
+.paginate-page-class-name {
+  display: inline-block;
+  padding: 10px;
+}
+
+.activeClassName {
+  font-weight: bold;
 }
