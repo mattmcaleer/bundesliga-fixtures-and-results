@@ -8,9 +8,6 @@ function Results({ divisions, seasons }) {
   const [division, setDivision] = useState(divisions[0]);
   const [season, setSeason] = useState(seasonsMostRecentFirst[0]);
 
-  console.log(seasons)
-  console.log(seasonsMostRecentFirst)
-
   const handleDivisionChange = (e) => {
     setDivision(divisions[e.target.value])
   }

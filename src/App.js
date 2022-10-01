@@ -5,7 +5,6 @@ import LeagueTable from './components/LeagueTable';
 import { Route, Routes } from 'react-router-dom';
 import Results from './components/Results';
 import TitlePage from './components/TitlePage';
-import Clubs from './components/Clubs';
 
 function App() {
   const divisions = [
@@ -37,16 +36,15 @@ function App() {
     { label: "2022-23", value: "2022" }  
   ];
 
-    return (
-        <div className='App'>
-            <NavBar />
-            <Routes>
-                <Route path='' element={<TitlePage />} />
-                <Route path="fixtures" element={<Results seasons={seasons} divisions={divisions} />} />
-                <Route path="table" element={<LeagueTable seasons={seasons} divisions={divisions} />} />
-                <Route path="clubs" element={<Clubs />} />
-            </Routes>
-        </div>
+  return (
+    <div className='App'>
+      <NavBar />
+      <Routes>
+        <Route path='' element={<TitlePage />} />
+        <Route path="fixtures" element={<Results seasons={seasons} divisions={divisions} />} />
+        <Route path="table" element={<LeagueTable seasons={seasons} divisions={divisions} />} />
+      </Routes>
+    </div>
   );
 }
 

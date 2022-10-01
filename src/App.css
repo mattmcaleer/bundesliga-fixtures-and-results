@@ -136,6 +136,10 @@ li {
     list-style: none;
 }
 
+.results-page {
+  position: absolute;
+}
+
 /*League Table*/
 
 table, th, td {
@@ -159,12 +163,33 @@ table tr:nth-child(odd) td{
 
 .paginate {
   cursor: default;
+  display: grid;
   width: 100%;
+  margin: 0px;
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.paginate-page-class-name {
-  display: inline-block;
-  padding: 10px;
+.pageClassName {
+  grid-row-start: 1;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  text-align: center;
+}
+
+.previous {
+  grid-row-start: 1;
+  grid-column-start: 2; 
+  font-weight: bold;
+}
+
+.next {
+  grid-row-start: 1;
+  grid-column-start: 4; 
+  font-weight: bold;
 }
 
 .activeClassName {
