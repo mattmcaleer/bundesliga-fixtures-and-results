@@ -40,8 +40,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="" element={<TitlePage />} />
-        <Route path="" element={<Results seasons={seasons} divisions={divisions} />} />
-        <Route path="" element={<LeagueTable seasons={seasons} divisions={divisions} />} />
+        <Route path="/fixtures" element={<Results seasons={seasons} divisions={divisions} />} />
+        <Route path="/table" element={<LeagueTable seasons={seasons} divisions={divisions} />} />
       </Routes>
     </div>
   );
