@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b11d28f869189364de49",
+    "revision": "cc2efe93a05368b8f2d2",
     "url": "/bundesliga-fixtures-and-results/static/css/main.44841cf8.chunk.css"
   },
   {
-    "revision": "b11d28f869189364de49",
-    "url": "/bundesliga-fixtures-and-results/static/js/main.6c166817.chunk.js"
+    "revision": "cc2efe93a05368b8f2d2",
+    "url": "/bundesliga-fixtures-and-results/static/js/main.a6d2819e.chunk.js"
   },
   {
     "revision": "72f0edee31966cda6d80",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/bundesliga-fixtures-and-results/static/js/2.fa415a2c.chunk.js"
   },
   {
-    "revision": "3e93ff37ac09b3ad455896d02c8343f5",
+    "revision": "fe1f08451d03732ab01d658bcc2a91a2",
     "url": "/bundesliga-fixtures-and-results/index.html"
   }
 ];
