@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/bundesliga-fixtures-and-results/static/js/2.fa415a2c.chunk.js"
   },
   {
-    "revision": "46ef8653de2d3407af18a9f5336e226f",
+    "revision": "15a03cc5e038db6dc169e72d2a7969ea",
     "url": "/bundesliga-fixtures-and-results/index.html"
   }
 ];
