@@ -1,13 +1,13 @@
 {
-  "main.css": "/bundesliga-fixtures-and-results/home/static/css/main.44841cf8.chunk.css",
-  "main.js": "/bundesliga-fixtures-and-results/home/static/js/main.e11d03cf.chunk.js",
-  "main.js.map": "/bundesliga-fixtures-and-results/home/static/js/main.e11d03cf.chunk.js.map",
-  "runtime~main.js": "/bundesliga-fixtures-and-results/home/static/js/runtime~main.269324ff.js",
-  "runtime~main.js.map": "/bundesliga-fixtures-and-results/home/static/js/runtime~main.269324ff.js.map",
-  "static/js/2.fa415a2c.chunk.js": "/bundesliga-fixtures-and-results/home/static/js/2.fa415a2c.chunk.js",
-  "static/js/2.fa415a2c.chunk.js.map": "/bundesliga-fixtures-and-results/home/static/js/2.fa415a2c.chunk.js.map",
-  "index.html": "/bundesliga-fixtures-and-results/home/index.html",
-  "precache-manifest.d14068745d591756f3d82eaba3265541.js": "/bundesliga-fixtures-and-results/home/precache-manifest.d14068745d591756f3d82eaba3265541.js",
-  "service-worker.js": "/bundesliga-fixtures-and-results/home/service-worker.js",
-  "static/css/main.44841cf8.chunk.css.map": "/bundesliga-fixtures-and-results/home/static/css/main.44841cf8.chunk.css.map"
+  "main.css": "./static/css/main.44841cf8.chunk.css",
+  "main.js": "./static/js/main.e11d03cf.chunk.js",
+  "main.js.map": "./static/js/main.e11d03cf.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+  "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+  "static/js/2.fa415a2c.chunk.js": "./static/js/2.fa415a2c.chunk.js",
+  "static/js/2.fa415a2c.chunk.js.map": "./static/js/2.fa415a2c.chunk.js.map",
+  "index.html": "./index.html",
+  "precache-manifest.171915bdd032ea8e44c5b83e7b1604ca.js": "./precache-manifest.171915bdd032ea8e44c5b83e7b1604ca.js",
+  "service-worker.js": "./service-worker.js",
+  "static/css/main.44841cf8.chunk.css.map": "./static/css/main.44841cf8.chunk.css.map"
 }
