@@ -10,7 +10,6 @@ function App() {
   const divisions = [
     { label: "Bundesliga", value: "bl1" },
     { label: "2. Bundesliga", value: "bl2" },
-    { label: "3. Liga", value: "bl3" }
   ];
 
   const seasons = [

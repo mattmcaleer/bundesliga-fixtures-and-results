@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function Results({ divisions, seasons }) {
 
-  const seasonsMostRecentFirst = [...seasons].reverse();
+  const seasonsMostRecentFirst = [...seasons].slice(-12).reverse();
   const [division, setDivision] = useState(divisions[0]);
   const [season, setSeason] = useState(seasonsMostRecentFirst[0]);
 

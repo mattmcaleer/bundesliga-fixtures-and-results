@@ -4,7 +4,7 @@ function LeagueTable({ seasons, divisions }) {
   const [allData,setAllData] = useState([]);
   const [filteredData,setFilteredData] = useState(allData);
   const [isLoaded, setIsLoaded] = useState(false);
-  const seasonsMostRecentFirst = [...seasons].reverse();
+  const seasonsMostRecentFirst = [...seasons].slice(-12).reverse();
   const [division, setDivision] = useState(divisions[0]);
   const [season, setSeason] = useState(seasonsMostRecentFirst[0]);
   const [selectedSeason, setSelectedSeason] = useState()
