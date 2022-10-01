@@ -39,9 +39,9 @@ function App() {
     <div className='App'>
       <NavBar />
       <Routes>
-        <Route path="bundesliga-fixtures-and-results/home" element={<TitlePage />} />
-        <Route path="bundesliga-fixtures-and-results/fixtures" element={<Results seasons={seasons} divisions={divisions} />} />
-        <Route path="bundesliga-fixtures-and-results/table" element={<LeagueTable seasons={seasons} divisions={divisions} />} />
+        <Route path="" element={<TitlePage />} />
+        <Route path="" element={<Results seasons={seasons} divisions={divisions} />} />
+        <Route path="" element={<LeagueTable seasons={seasons} divisions={divisions} />} />
       </Routes>
     </div>
   );
