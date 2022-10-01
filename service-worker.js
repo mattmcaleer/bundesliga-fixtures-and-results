@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bundesliga-fixtures-and-results/precache-manifest.b853d371c16c93adddf5a2af46b36df1.js"
+  "/bundesliga-fixtures-and-results/home/precache-manifest.d14068745d591756f3d82eaba3265541.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/bundesliga-fixtures-and-results/index.html", {
+workbox.routing.registerNavigationRoute("/bundesliga-fixtures-and-results/home/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });

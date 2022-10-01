@@ -1,13 +1,13 @@
 {
-  "main.css": "/bundesliga-fixtures-and-results/static/css/main.44841cf8.chunk.css",
-  "main.js": "/bundesliga-fixtures-and-results/static/js/main.e11d03cf.chunk.js",
-  "main.js.map": "/bundesliga-fixtures-and-results/static/js/main.e11d03cf.chunk.js.map",
-  "runtime~main.js": "/bundesliga-fixtures-and-results/static/js/runtime~main.fafd52f8.js",
-  "runtime~main.js.map": "/bundesliga-fixtures-and-results/static/js/runtime~main.fafd52f8.js.map",
-  "static/js/2.fa415a2c.chunk.js": "/bundesliga-fixtures-and-results/static/js/2.fa415a2c.chunk.js",
-  "static/js/2.fa415a2c.chunk.js.map": "/bundesliga-fixtures-and-results/static/js/2.fa415a2c.chunk.js.map",
-  "index.html": "/bundesliga-fixtures-and-results/index.html",
-  "precache-manifest.b853d371c16c93adddf5a2af46b36df1.js": "/bundesliga-fixtures-and-results/precache-manifest.b853d371c16c93adddf5a2af46b36df1.js",
-  "service-worker.js": "/bundesliga-fixtures-and-results/service-worker.js",
-  "static/css/main.44841cf8.chunk.css.map": "/bundesliga-fixtures-and-results/static/css/main.44841cf8.chunk.css.map"
+  "main.css": "/bundesliga-fixtures-and-results/home/static/css/main.44841cf8.chunk.css",
+  "main.js": "/bundesliga-fixtures-and-results/home/static/js/main.e11d03cf.chunk.js",
+  "main.js.map": "/bundesliga-fixtures-and-results/home/static/js/main.e11d03cf.chunk.js.map",
+  "runtime~main.js": "/bundesliga-fixtures-and-results/home/static/js/runtime~main.269324ff.js",
+  "runtime~main.js.map": "/bundesliga-fixtures-and-results/home/static/js/runtime~main.269324ff.js.map",
+  "static/js/2.fa415a2c.chunk.js": "/bundesliga-fixtures-and-results/home/static/js/2.fa415a2c.chunk.js",
+  "static/js/2.fa415a2c.chunk.js.map": "/bundesliga-fixtures-and-results/home/static/js/2.fa415a2c.chunk.js.map",
+  "index.html": "/bundesliga-fixtures-and-results/home/index.html",
+  "precache-manifest.d14068745d591756f3d82eaba3265541.js": "/bundesliga-fixtures-and-results/home/precache-manifest.d14068745d591756f3d82eaba3265541.js",
+  "service-worker.js": "/bundesliga-fixtures-and-results/home/service-worker.js",
+  "static/css/main.44841cf8.chunk.css.map": "/bundesliga-fixtures-and-results/home/static/css/main.44841cf8.chunk.css.map"
 }
