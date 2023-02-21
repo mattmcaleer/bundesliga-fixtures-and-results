@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bundesliga-fixtures-and-results/precache-manifest.993ee2e239c26c3d4b1024fc120cda29.js"
+  "/bundesliga-fixtures-and-results/precache-manifest.d55f34bc75023d8d515af0743257802a.js"
 );
 
 workbox.clientsClaim();
