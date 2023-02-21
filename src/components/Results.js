@@ -30,7 +30,7 @@ function Results({ divisions, seasons }) {
           ))}
         </select>
 
-        <label> Season: </label>
+        <label>Season: </label>
         <select 
           defaultValue={season}
           onChange={handleSeasonChange}>
